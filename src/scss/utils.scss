@@ -1,0 +1,25 @@
+// BASE PIXEL SIZE FOR ALL REM calcs
+$base_px: 16; // body font-size: 100%
+
+// Function to convert pixels to REM 
+@function pxToRem($target_px) {
+  @return $target_px / $base_px * 1rem;
+}
+
+// Function to convert pixels to EM
+// optional parameter for context font-size - uses base font size as default 
+@function pxToEm($target_px, $context_px: $base_px) {
+  @return $target_px / $context_px * 1em;
+}
+
+// clearfix mixin
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content:"";
+		display:table;
+	}
+	&:after {
+		clear:both;
+	}
+}

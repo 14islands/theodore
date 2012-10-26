@@ -1,0 +1,246 @@
+@import 'normalize';
+@import 'css3';
+@import 'utils';
+
+body {
+	font-family: 'Lora', serif;
+	color: #5b5b5b;
+	background-color: #f6f6f6;
+}
+
+
+/*
+* Header
+*/
+
+header {
+	background-color: #ececec;
+	border-bottom: 1px solid #dedede;
+}
+
+header #logo {
+	display: inline-block;
+	padding: 5px 10px 2px;
+	float: left;
+	border-right: 1px dotted #c9c9c9;
+	@include box-sizing(border-box);
+}
+
+header #logo img {
+	width: pxToRem(22);
+}
+
+
+header nav {
+	font-size: pxToRem(12);
+	line-height: pxToRem(40);
+	text-transform: uppercase;
+	margin-left: pxToRem(42);
+	@include box-sizing(border-box);
+
+	// switch to smaller font under 280px wide
+	@media only screen and (max-width: pxToEm(280)) {
+		font-size: pxToRem(10);
+	}
+}
+
+header nav a {
+	width: 33%;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	color: #5b5b5b;
+
+	@include box-sizing(border-box);
+
+	& + a {
+		border-left: 1px dotted #c9c9c9;
+	}  
+
+	&.selected,
+	&:hover,
+	&:active {
+		background: #fff;
+	}
+
+	// switch nav links to stack vertically
+	@media only screen and (max-width: pxToEm(220)) {
+		display: block;
+		width: auto;
+		& + a {
+			border-top: 1px dotted #c9c9c9;
+		}  
+	}
+}
+
+
+/*
+* Typo
+*/
+
+h1 {
+	color: #908f8f;
+	text-align: center;
+	font-size: pxToRem(25);
+	font-weight: bold;
+}
+
+#project-list h1 {
+	font-size: pxToRem(12);
+}
+
+#project-details h1 {
+	font-size: pxToRem(60);
+}
+
+
+/*
+* Main
+*/
+
+#main {
+	height: 100%;
+	width: 100%;
+	border-top: 1px solid white;
+	@include box-sizing(border-box);
+	@include clearfix;
+
+	/*
+	#home-logo {
+		background: url(../sprites/sprite-gui.png) no-repeat top left;
+		width: 218px;
+		height: 247px;
+		margin: 0 auto 30px;
+	}
+	*/
+
+	h1 {
+		background: #fff;
+		margin-bottom: 30px;
+		font-weight: normal;
+		padding: 21px 20px;
+		@include box-shadow("#fbfbfb 0 1px 0px, #dedede 0 2px 0px");
+	}
+}
+
+/*
+#main #intro {
+	width: 300px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#main #quote {
+	color: #7d7d7d;
+}
+
+#main q {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+#main .author {
+	font-size: 12px;
+	font-style: italic;
+	color: #7d7d7d;
+}
+*/
+
+
+
+.project-list {
+	margin: 0 pxToRem(10);
+	text-align: center;
+	list-style: none;
+
+	li {
+		margin: pxToRem(10);
+	}
+
+	// hide the project text - only show image
+	span {
+	  position: absolute !important;
+	  clip: rect(1px 1px 1px 1px); // IE6, IE7
+	  clip: rect(1px, 1px, 1px, 1px);
+	}
+
+	img {
+		max-width: 100%;
+	}
+	
+	@media only screen and (min-width: pxToEm(620)) {
+		width: pxToRem(600);
+		margin: 0 auto;
+		li {
+			float: left;
+		}
+	}
+
+	@media only screen and (min-width: pxToEm(920)) {
+		width: pxToRem(900);
+	} 
+}
+
+
+
+/*
+*  Breakpoint - Bigger than "mobile"
+*/
+@media only screen and (min-width: pxToEm(568)) {
+  
+  #main {
+  	//padding-top: 70px;
+  }
+
+  header #logo {
+		padding: 8px 26px 2px 20px;
+  
+  	img {
+			width: 34px;
+			height: 44px;
+		}
+  }
+
+  header nav {
+	  margin-left: pxToRem(80);
+	  line-height: pxToRem(58);
+	}
+
+  #main #home-logo {
+		margin-bottom: pxToRem(50);
+  }
+
+  #main h1 {
+		margin-bottom: pxToRem(50);
+  }
+
+  /*
+  #main q {
+		margin-bottom: 18px;
+  }
+  */
+
+	#project-list h1 {
+		font-size: pxToRem(14);
+	}
+}
+
+
+/*
+*  Breakpoint - Bigger than 960 grid - lock it down!
+*/
+@media only screen and (min-width: pxToEm(961)) {
+	.wrapper {
+		max-width: pxToRem(960);
+		margin: 0 auto;
+	}
+	header .wrapper {
+		@include box-sizing(border-box);
+		border-left: 1px dotted #c9c9c9;
+		border-right: 1px dotted #c9c9c9;
+	}
+	header nav a {
+		width: 33.28%;
+	}
+}
