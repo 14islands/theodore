@@ -49,6 +49,10 @@ body {
 	color: #5b5b5b;
 	background-color: #f6f6f6;
 	-webkit-font-smoothing: antialiased; // makes bold thinner, more like in PS
+
+	p {
+		line-height: 1.35em;
+	}
 }
 
 
@@ -203,6 +207,9 @@ body > footer {
 
 	section {
 		background: #ececec;
+		&:nth-child(odd) {
+			background: none;
+		}
 	}
 }
 
@@ -370,11 +377,6 @@ body > footer {
 		}
 	}
 
-	section {
-		&:nth-child(odd) {
-			background: none;
-		}
-	}
 
 	.project-hero {
 		background: #efefef;
@@ -471,14 +473,112 @@ body > footer {
 }
 
 
+#info {
+	section {
+
+		@include pxToRem(padding, 50, 0, 50, 0);
+
+		.wrapper {
+			padding-left: 1.8em;
+			@include box-sizing(border-box);
+		}	
+	}
+
+	h2 {
+		@include pxToRem(font-size, 31);
+		margin-bottom: 1em;
+	}
+	p {
+		margin-bottom: 1em;
+	}
+
+	.intro {
+		.columns {
+			// REFACTOR COLUMNS INTO MIXIN
+			columns: 3;
+			-webkit-columns: 3;
+			-moz-columns: 3;
+
+			-webkit-column-gap: 2em;
+			column-gap: 2em;
+
+			p {
+				-webkit-break-inside: avoid;
+				-webkit-column-break-inside: avoid;
+				break-inside: avoid;
+			}
+		}
+	}
+
+	.then-and-now {
+		@include clearfix;
+		img {
+			float: left;
+			margin-right: 60px;
+		}
+
+		.columns {
+			// REFACTOR COLUMNS INTO MIXIN
+			columns: 2;
+			-webkit-columns: 2;
+			-moz-columns: 2;
+
+			-webkit-column-gap: 2em;
+			column-gap: 2em;
+
+			p {
+				-webkit-break-inside: avoid;
+				-webkit-column-break-inside: avoid;
+				break-inside: avoid;
+			}
+		}
+	}
+
+	.contact-icon {
+		display: table;
+		@include pxToRem(width, 50);
+		@include pxToRem(height, 50);
+		background: #cbcbcb;
+		@include border-radius(3px);
+
+		color: #f2f2f2;
+		text-decoration: none;
+		@include pxToRem(font-size, 10);
+		font-weight: bold;
+
+		float: left;
+		@include pxToRem(margin, 10);
+		overflow: hidden;
+
+		span {
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+			@include transition(all 300ms $easeInOutQuint);
+			@include transform(translateY(100%));
+		}
+
+		&:hover {
+			background: #394066;
+			@include transition(background 250ms ease-in);
+
+			span {
+				@include transform(translateY(0%));
+			}
+		}
+
+	}
+}
+
+
 
 
 /*
 *  Last breakpoint - Bigger than 960 grid - lock it down!
 */
-@media (min-width: pxToEm(961)) {
+@media (min-width: pxToEm(941)) {
 	.wrapper {
-		@include pxToRem(max-width, 960);
+		@include pxToRem(max-width, 940);
 		margin: 0 auto;
 	}
 	header .wrapper,
