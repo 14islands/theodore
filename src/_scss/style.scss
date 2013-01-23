@@ -282,13 +282,42 @@ body > footer {
 		text-align: center;
 		list-style: none;
 
-		li {
-			@include pxToRem(margin, 10);
+		%project-item {
+			@include pxToRem(width, 280);
+			@include pxToRem(height, 240);
 		}
 
-		// hide the project text - only show image
-		span {
-			@extend %ir-hide-text;
+		a {
+			display: inline-block;
+
+			background-color: #cbcbcb;
+			@extend %project-item;
+			@include pxToRem(margin, 10);
+			
+			.overlay {
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				@extend %project-item;				
+				background: #394066;
+				
+				h2 {
+					display: inline-block;
+					@include pxToRem(margin-top, 110);
+					@include pxToRem(font-size, 20);
+
+					color: white;
+					font-weight: bold;				
+				}
+			}
+
+			&:hover .overlay {
+				display: block;
+				opacity: 0.7;
+				visibility: visible;
+
+				@include transition(opacity 300ms ease-in);
+			} 
 		}
 
 		img {
@@ -298,7 +327,7 @@ body > footer {
 		@media (min-width: pxToEm(620)) {
 			@include pxToRem(width, 600);
 			margin: 0 auto;
-			li {
+			a {
 				float: left;
 			}
 		}

@@ -1,4 +1,5 @@
 *.sublime*
-ws.js
 .DS_Store
 .sass-cache
+ws.js
+src/ws.js
