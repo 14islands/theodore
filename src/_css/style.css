@@ -725,7 +725,14 @@ body > footer {
         -webkit-column-gap: 2em;
         column-gap: 2em; } }
 @media (min-width: 48em) {
-  #info .lets-talk p {
+  #info .lets-talk {
+    display: block;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
     padding-right: 3em;
     width: 35%; } }
 #info .contact-list {
@@ -737,6 +744,13 @@ body > footer {
     clear: both; }
   @media (min-width: 48em) {
     #info .contact-list {
+      display: block;
+      float: left;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
       width: 65%; } }
 #info .contact-icon {
   display: table;

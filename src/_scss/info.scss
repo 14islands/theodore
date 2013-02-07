@@ -78,15 +78,11 @@
 		}
 	}
 
-	%floated-box {
-		display: block;
-		float: left;
-		@include box-sizing(border-box);
-	}
-
-	.lets-talk p {
+	.lets-talk {
 		@include if-grid-layout {
-			@extend %floated-box;
+			display: block;
+			float: left;
+			@include box-sizing(border-box);
 			padding-right: 3em;
 			width: 35%;
 			
@@ -96,7 +92,9 @@
 	.contact-list {
 		@include clearfix;
 		@include if-grid-layout {
-			@extend %floated-box;
+			display: block;
+			float: left;
+			@include box-sizing(border-box);
 			width: 65%;
 		}
 	}
