@@ -51,10 +51,11 @@
 			
 			.overlay {
 				opacity: 0;
-				visibility: hidden;
+				
 				position: absolute;
 				@extend %project-item;				
 				background: #394066;
+				@include transition(opacity 150ms ease-out);
 				
 				h2 {
 					display: inline-block;
@@ -69,7 +70,7 @@
 			&:hover .overlay {
 				display: block;
 				opacity: 0.7;
-				visibility: visible;
+				
 
 				@include transition(opacity 300ms ease-in);
 			} 
