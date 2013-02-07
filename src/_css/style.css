@@ -653,7 +653,7 @@ body > footer {
         width: 1217px;
         margin-left: -608.5px; } }
 #info section {
-  padding: 50px 0px 50px 0px; }
+  padding: 50px 0px 30px 0px; }
   #info section .wrapper {
     padding-left: 1em;
     padding-right: 1em;
@@ -663,8 +663,7 @@ body > footer {
     -o-box-sizing: border-box;
     box-sizing: border-box; }
 #info .intro {
-  border-bottom: 1px solid #dedede;
-  padding-bottom: 30px; }
+  border-bottom: 1px solid #dedede; }
   #info .intro .columns {
     columns: 1;
     -webkit-columns: 1;
@@ -740,7 +739,8 @@ body > footer {
     padding-right: 3em;
     width: 35%; } }
 #info .contact-list {
-  *zoom: 1; }
+  *zoom: 1;
+  padding-bottom: 20px; }
   #info .contact-list:before, #info .contact-list:after {
     content: "";
     display: table; }

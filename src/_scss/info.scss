@@ -42,7 +42,7 @@
 
 	section {
 
-		@include pxToRem(padding, 50, 0, 50, 0);
+		@include pxToRem(padding, 50, 0, 30, 0);
 
 		.wrapper {
 			padding-left: 1em;
@@ -53,8 +53,7 @@
 
 	.intro {
 		border-bottom: 1px solid #dedede;
-		@include pxToRem(padding-bottom, 30);
-
+		
 		.columns {
 			@include column-grid(3);
 		}
@@ -93,6 +92,7 @@
 
 	.contact-list {
 		@include clearfix;
+		@include pxToRem(padding-bottom, 20);
 		@include if-grid-layout {
 			display: block;
 			float: left;
