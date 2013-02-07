@@ -53,6 +53,8 @@
 
 	.intro {
 		border-bottom: 1px solid #dedede;
+		@include pxToRem(padding-bottom, 30);
+
 		.columns {
 			@include column-grid(3);
 		}

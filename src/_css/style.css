@@ -663,7 +663,8 @@ body > footer {
     -o-box-sizing: border-box;
     box-sizing: border-box; }
 #info .intro {
-  border-bottom: 1px solid #dedede; }
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 30px; }
   #info .intro .columns {
     columns: 1;
     -webkit-columns: 1;
