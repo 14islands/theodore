@@ -645,13 +645,13 @@ body > footer {
   #info .wide-picture-wrapper img {
     display: block;
     position: relative;
-    left: 50%;
-    width: 568px;
-    margin-left: -300px; }
+    width: 100%;
+    margin: 0 auto;
+    max-width: 568px; }
     @media (min-width: 35.5em) {
       #info .wide-picture-wrapper img {
-        width: 1217px;
-        margin-left: -608.5px; } }
+        max-width: none;
+        min-width: 1217px; } }
 #info section {
   padding: 50px 0px 30px 0px; }
   #info section .wrapper {

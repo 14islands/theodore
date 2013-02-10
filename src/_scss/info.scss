@@ -29,13 +29,13 @@
 		img {
 			display: block;
 			position: relative;
-			left: 50%;
-			@include pxToRem(width, 568);
-			@include pxToRem(margin-left, -600/2);
-
+			width: 100%;
+			margin: 0 auto;
+			@include pxToRem(max-width, 568);
+			
 			@include if-wider-than-mobile {
-				@include pxToRem(width, 1217);
-				@include pxToRem(margin-left, -1217/2);
+				max-width: none;
+				@include pxToRem(min-width, 1217);
 			}
 		}
 	}
