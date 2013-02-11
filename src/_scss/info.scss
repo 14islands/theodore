@@ -119,11 +119,36 @@
 		overflow: hidden;
 
 		&:hover {
-			background-color: #394066;
-			@include transition(background 250ms ease-in);
+			@include transition(background 200ms ease-in);
 		}
-
 	}
+
+	.icon-mail {
+		&:hover {
+			background-color: #8ba484;
+		}
+	}
+	.icon-facebook {
+		&:hover {
+			background-color: #6ca3d3;
+		}	
+	}
+	.icon-linkedin {
+		&:hover {
+			background-color: #699fad;
+		}
+	}	
+	.icon-dribble {
+		&:hover {
+			background-color: #c38dc1;
+		}
+	}
+	.icon-twitter {
+		&:hover {
+			background-color: #77b9d5;
+		}
+	}
+
 }
 
 

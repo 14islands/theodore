@@ -782,9 +782,18 @@ body > footer {
   margin: 10px 10px 10px 0px;
   overflow: hidden; }
   #info .contact-icon:hover {
-    background-color: #394066;
-    -webkit-transition: background 250ms ease-in;
-    -moz-transition: background 250ms ease-in;
-    -ms-transition: background 250ms ease-in;
-    -o-transition: background 250ms ease-in;
-    transition: background 250ms ease-in; }
+    -webkit-transition: background 200ms ease-in;
+    -moz-transition: background 200ms ease-in;
+    -ms-transition: background 200ms ease-in;
+    -o-transition: background 200ms ease-in;
+    transition: background 200ms ease-in; }
+#info .icon-mail:hover {
+  background-color: #8ba484; }
+#info .icon-facebook:hover {
+  background-color: #6ca3d3; }
+#info .icon-linkedin:hover {
+  background-color: #699fad; }
+#info .icon-dribble:hover {
+  background-color: #c38dc1; }
+#info .icon-twitter:hover {
+  background-color: #77b9d5; }
