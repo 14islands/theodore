@@ -28,6 +28,7 @@
 	}
 	p {
 		@include pxToRem(font-size, 15);
+		@include pxToRem(margin-bottom, 15);
 		@include if-wider-than-mobile {
 			@include pxToRem(font-size, 16);
 		}
@@ -90,6 +91,7 @@
 			@include pxToRem(margin-bottom, 25);
 		}
 		p {
+			margin-bottom: 0;
 			@include pxToRem(font-size, 18);
 			@include pxToRem(line-height, 24);
 
@@ -180,6 +182,42 @@
 		}
 	}
 
+
+	.project-item-aside {
+		.wrapper {
+			@extend %paddedMargins;
+		}
+
+		@include if-grid-layout {
+			.text {
+				box-sizing: border-box;
+				@include pxToRem(padding-right, 50);
+			}
+
+			&:nth-child(odd) {
+				.text {
+					float: left;
+					width: 50%;
+				}
+				div[data-picture] {
+					width: 50%;
+					float: right;
+				}
+			}
+			&:nth-child(even) {
+				.text {
+					float: right;
+					width: 50%;
+					@include pxToRem(padding-left, 20);
+					@include pxToRem(padding-right, 30);
+				}
+				div[data-picture] {
+					width: 50%;
+					float: left;
+				}
+			}
+		}
+	}
 
 	/*
 	.list-item {

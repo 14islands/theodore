@@ -620,7 +620,8 @@ body > footer {
       #project-details h2 {
         font-size: 31px; } }
   #project-details p {
-    font-size: 15px; }
+    font-size: 15px;
+    margin-bottom: 15px; }
     @media (min-width: 35.5625em) {
       #project-details p {
         font-size: 16px; } }
@@ -647,7 +648,7 @@ body > footer {
       #project-details section {
         padding-top: 60px;
         padding-bottom: 60px; } }
-  #project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper {
+  #project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper, #project-details .project-item-aside .wrapper {
     padding-left: 20px;
     padding-right: 20px;
     -webkit-box-sizing: border-box;
@@ -656,7 +657,7 @@ body > footer {
     -o-box-sizing: border-box;
     box-sizing: border-box; }
     @media (min-width: 35.5625em) {
-      #project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper {
+      #project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper, #project-details .project-item-aside .wrapper {
         padding-left: 30px;
         padding-right: 30px; } }
   #project-details .project-headline {
@@ -671,6 +672,7 @@ body > footer {
       margin-top: 40px;
       margin-bottom: 25px; }
     #project-details .project-headline p {
+      margin-bottom: 0;
       font-size: 18px;
       line-height: 24px; }
       #project-details .project-headline p:last-of-type:after {
@@ -755,6 +757,24 @@ body > footer {
         -moz-columns: 2;
         -webkit-column-gap: 2em;
         column-gap: 2em; } }
+  @media (min-width: 48em) {
+    #project-details .project-item-aside .text {
+      box-sizing: border-box;
+      padding-right: 50px; }
+    #project-details .project-item-aside:nth-child(odd) .text {
+      float: left;
+      width: 50%; }
+    #project-details .project-item-aside:nth-child(odd) div[data-picture] {
+      width: 50%;
+      float: right; }
+    #project-details .project-item-aside:nth-child(even) .text {
+      float: right;
+      width: 50%;
+      padding-left: 20px;
+      padding-right: 30px; }
+    #project-details .project-item-aside:nth-child(even) div[data-picture] {
+      width: 50%;
+      float: left; } }
 
 .wide-picture-wrapper, #project-details .project-hero {
   background-color: #ddd;
