@@ -26,6 +26,12 @@
 			@include pxToRem(font-size, 31);
 		}
 	}
+	p {
+		@include pxToRem(font-size, 15);
+		@include if-wider-than-mobile {
+			@include pxToRem(font-size, 16);
+		}
+	}
 
 	img {
 		max-width: 100%;
@@ -57,8 +63,8 @@
 		@include pxToRem(padding-bottom, 25);
 
 		@include if-wider-than-mobile {
-			@include pxToRem(padding-top, 50);
-			@include pxToRem(padding-bottom, 50);
+			@include pxToRem(padding-top, 60);
+			@include pxToRem(padding-bottom, 60);
 		}
 	}
 
@@ -117,10 +123,15 @@
 		}
 		div[data-picture] {
 			text-align: center;
-			@include pxToRem(margin-bottom, 30);
+			@include pxToRem(margin-bottom, 25);
 		}
 		p {
 			@include pxToRem(margin-bottom, 30);
+		}
+
+	@include pxToRem(padding-bottom, 0);
+		@include if-wider-than-mobile {
+			@include pxToRem(padding-bottom, 30);
 		}
 
 		@include if-grid-layout {
@@ -151,6 +162,24 @@
 		}
 	}
 		
+
+	.project-item-large {
+		.wrapper {
+			@extend %paddedMargins;
+		}
+
+		p {
+			@include pxToRem(margin-bottom, 20);
+			@include if-wider-than-mobile {
+				@include pxToRem(margin-bottom, 30);
+			}
+		}
+
+		.columns {
+			@include column-grid(2);
+		}
+	}
+
 
 	/*
 	.list-item {
