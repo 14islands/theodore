@@ -47,12 +47,10 @@ section {
 *
 */
 html {
-  height: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
 
 body {
-  min-height: 100%;
   font-size: 100%; }
 
 article,
@@ -165,7 +163,13 @@ body > header #logo > span {
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px); }
 
+html {
+  position: relative;
+  min-height: 100%; }
+
 body {
+  margin: 0 0 100px;
+  /* bottom = footer height */
   font-family: "Lora", serif;
   color: #5b5b5b;
   background-color: #f6f6f6;
@@ -313,7 +317,7 @@ body > header {
     @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
       body > header #logo {
         background-image: url("img/sprite@2x.png"); } }
-    @media (min-width: 35.5em) {
+    @media (min-width: 35.5625em) {
       body > header #logo {
         height: 58px;
         width: 80px;
@@ -329,7 +333,7 @@ body > header {
     font-size: 12px;
     line-height: 40px;
     margin-left: 50px; }
-    @media (min-width: 35.5em) {
+    @media (min-width: 35.5625em) {
       body > header nav {
         line-height: 58px;
         margin-left: 80px; } }
@@ -362,6 +366,11 @@ body > header {
  * Footer
  */
 body > footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
   display: block;
   border-top: 1px solid #e1e1e1;
   height: 40px;
@@ -373,7 +382,7 @@ body > footer {
     display: table; }
   body > footer:after {
     clear: both; }
-  @media (min-width: 35.5em) {
+  @media (min-width: 35.5625em) {
     body > footer {
       height: 60px; } }
   @media (-webkit-max-device-pixel-ratio: 1.49), (max--moz-device-pixel-ratio: 1.49), (-o-max-device-pixel-ratio: 2.98 / 2), (max-device-pixel-ratio: 1.49), (max-resolution: 143.04dpi), (max-resolution: 1.49dppx) {
@@ -451,7 +460,7 @@ body > footer {
       margin-top: 15px;
       font-size: 12px;
       font-style: italic; }
-  @media (min-width: 35.5em) {
+  @media (min-width: 35.5625em) {
     #home #main {
       margin-top: 75px;
       margin-bottom: 120px; }
@@ -473,7 +482,7 @@ body > footer {
   -ms-box-shadow: #fbfbfb 0 1px 0px, #dedede 0 2px 0px;
   -o-box-shadow: #fbfbfb 0 1px 0px, #dedede 0 2px 0px;
   box-shadow: #fbfbfb 0 1px 0px, #dedede 0 2px 0px; }
-  @media (min-width: 35.5em) {
+  @media (min-width: 35.5625em) {
     #projects h1 {
       font-size: 14px; } }
 #projects #main {
@@ -547,7 +556,7 @@ body > footer {
     font-size: 14px; }
   #project-details nav.projects-nav .wrapper {
     padding: 10px 0px; }
-    @media (min-width: 35.5em) {
+    @media (min-width: 35.5625em) {
       #project-details nav.projects-nav .wrapper {
         padding: 21px 0px; } }
 #project-details .project-hero {
@@ -629,29 +638,41 @@ body > footer {
 #info h2 {
   margin-bottom: 20px;
   font-size: 25px; }
-  @media (min-width: 35.5em) {
+  @media (min-width: 35.5625em) {
     #info h2 {
       font-size: 31px; } }
 #info p {
   margin-bottom: 20px;
   font-size: 15px; }
-  @media (min-width: 35.5em) {
+  @media (min-width: 35.5625em) {
     #info p {
       font-size: 16px; } }
 #info .wide-picture-wrapper {
   background-color: #ddd;
   text-align: center;
-  padding: 0; }
-  #info .wide-picture-wrapper img {
-    display: block;
+  padding: 0;
+  overflow: hidden;
+  /*
+  		img {
+  			display: block;
+  			position: relative;
+  			left: 50%;
+  			@include pxToRem(width, 568);
+  			@include pxToRem(margin-left, -600/2);
+  
+  			@include if-wider-than-mobile {
+  				@include pxToRem(width, 1217);
+  				@include pxToRem(margin-left, -1217/2);
+  			}
+  		}*/ }
+  #info .wide-picture-wrapper > div {
     position: relative;
     left: 50%;
-    width: 568px;
-    margin-left: -300px; }
-    @media (min-width: 35.5em) {
-      #info .wide-picture-wrapper img {
-        width: 1217px;
-        margin-left: -608.5px; } }
+    float: left; }
+  #info .wide-picture-wrapper img {
+    position: relative;
+    left: -50%;
+    float: left; }
 #info section {
   padding: 50px 0px 50px 0px; }
   #info section .wrapper {

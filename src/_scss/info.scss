@@ -26,6 +26,9 @@
 		text-align: center;
 		padding: 0;
 		
+overflow:hidden;
+
+/*
 		img {
 			display: block;
 			position: relative;
@@ -37,7 +40,11 @@
 				@include pxToRem(width, 1217);
 				@include pxToRem(margin-left, -1217/2);
 			}
-		}
+		}*/
+
+>div { position: relative; left: 50%; float: left; }
+img { position: relative; left: -50%; float: left; }
+
 	}
 
 	section {

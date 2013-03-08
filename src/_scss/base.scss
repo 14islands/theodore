@@ -3,7 +3,7 @@
 // BREAKPOINT DEFINITIONS	
 /* Breakpoint mixin - wider than most mobiles*/
 @mixin if-wider-than-mobile {
-	@media (min-width: pxToEm(568)) {
+	@media (min-width: pxToEm(568 + 1)) {
 		@content;
 	}
 }
@@ -76,8 +76,13 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+html {
+	position: relative;
+	min-height: 100%;
+}
 
 body {
+	margin: 0 0 100px; /* bottom = footer height */
 	font-family: 'Lora', serif;
 	color: #5b5b5b;
 	background-color: #f6f6f6;
@@ -260,6 +265,12 @@ body > header {
  * Footer
  */
 body > footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+
 	display: block;
 	border-top: 1px solid #e1e1e1;
  	@include pxToRem(height, 40);
