@@ -10,7 +10,7 @@
 	#main {
 		margin: 0;
 	}
-	
+
 	h1 {
 		@include pxToRem(font-size, 36);
 		letter-spacing: -0.05em;
@@ -121,7 +121,6 @@
 		}
 		p {
 			@include pxToRem(margin-bottom, 30);
-			@include pxToRem(padding-right, 40);
 		}
 
 		@include if-grid-layout {
@@ -133,10 +132,13 @@
 			div[data-picture] {
 				text-align: left;
 			}
+			p {
+				@include pxToRem(padding-right, 50);
+			}
 			.item:last-child {
 				@include pxToRem(padding-left, 20);
 				> p {
-					display: table-row-group;
+					display: table-cell;
 					@include pxToRem(margin-bottom, 0);
 				}
 				> div[data-picture] {

@@ -697,8 +697,7 @@ body > footer {
     text-align: center;
     margin-bottom: 30px; }
   #project-details .project-item-grouped p {
-    margin-bottom: 30px;
-    padding-right: 40px; }
+    margin-bottom: 30px; }
   @media (min-width: 48em) {
     #project-details .project-item-grouped .item {
       float: left;
@@ -706,10 +705,12 @@ body > footer {
       padding-right: 0px; }
     #project-details .project-item-grouped div[data-picture] {
       text-align: left; }
+    #project-details .project-item-grouped p {
+      padding-right: 50px; }
     #project-details .project-item-grouped .item:last-child {
       padding-left: 20px; }
       #project-details .project-item-grouped .item:last-child > p {
-        display: table-row-group;
+        display: table-cell;
         margin-bottom: 0px; }
       #project-details .project-item-grouped .item:last-child > div[data-picture] {
         display: table-header-group; }
