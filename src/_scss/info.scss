@@ -23,9 +23,14 @@
 
 	.wide-picture-wrapper {
 		background-color: #ddd;
-		overflow:hidden;
 
-		>div { position: relative; left: 50%; float: left; }
+		// center variable width
+		overflow:hidden;
+		>div { 
+			position: relative; 
+			left: 50%; 
+			float: left; 
+		}
 		img { 
 			position: relative; 
 			left: -50%; 
