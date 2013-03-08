@@ -3,7 +3,7 @@
 // BREAKPOINT DEFINITIONS	
 /* Breakpoint mixin - wider than most mobiles*/
 @mixin if-wider-than-mobile {
-	@media (min-width: pxToEm(568)) {
+	@media (min-width: pxToEm(568 + 1)) {
 		@content;
 	}
 }
@@ -15,6 +15,11 @@
 }
 @mixin if-maximized-grid {
 	@media (min-width: pxToEm(960)) {
+		@content;
+	}
+}
+@mixin if-wider-than($px) {
+	@media (min-width: pxToEm($px)) {
 		@content;
 	}
 }
@@ -76,8 +81,18 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+html {
+	position: relative;
+	min-height: 100%;
+}
 
 body {
+	/* bottom = footer height */
+	@include pxToRem(margin-bottom, 40);
+	@include if-wider-than-mobile {
+ 		@include pxToRem(margin-bottom, 60);
+ 	}
+
 	font-family: 'Lora', serif;
 	color: #5b5b5b;
 	background-color: #f6f6f6;
@@ -260,10 +275,15 @@ body > header {
  * Footer
  */
 body > footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+
 	display: block;
 	border-top: 1px solid #e1e1e1;
+	@include clearfix;
  	@include pxToRem(height, 40);
- 	@include clearfix;
 
  	@include if-wider-than-mobile {
  		@include pxToRem(height, 60);
@@ -281,19 +301,19 @@ body > footer {
  * Main content 
  */
 #main {
-	height: 100%;
 	width: 100%;
-	@include pxToRem(margin-bottom, 50);
+	@include pxToRem(margin-bottom, 70);
 	@include box-sizing(border-box);
 	@include clearfix;
 
 	section {
-		background: #ececec;
-		&:nth-child(odd) {
-			background: none;
+		&:nth-child(even) {
+			background: #ececec;
 		}
 		@include clearfix;
 	}
+
+	overflow-x: hidden;
 }
 
 

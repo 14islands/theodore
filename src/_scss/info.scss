@@ -1,4 +1,24 @@
 
+.wide-picture-wrapper {
+		background-color: #ddd;
+
+		margin: 0 -15%; // crop image slightly at narrow widths
+
+		// center variable width
+		overflow:hidden;
+		>div { 
+			position: relative; 
+			left: 50%; 
+			float: left; 
+		}
+		img { 
+			position: relative; 
+			left: -50%; 
+			float: left;
+			max-width: 100%;
+		}
+	}
+
 #info {
 
 	#main {
@@ -21,32 +41,17 @@
 		}
 	}
 
-	.wide-picture-wrapper {
-		background-color: #ddd;
-		text-align: center;
-		padding: 0;
-		
-		img {
-			display: block;
-			position: relative;
-			width: 100%;
-			margin: 0 auto;
-			@include pxToRem(max-width, 568);
-			
-			@include if-wider-than-mobile {
-				max-width: none;
-				@include pxToRem(min-width, 1217);
-			}
-		}
-	}
+
 
 	section {
-
-		@include pxToRem(padding, 50, 0, 30, 0);
-
+		@include pxToRem(padding, 25, 0, 25, 0);
+		@include if-wider-than-mobile {
+			@include pxToRem(padding, 50, 0, 50, 0);
+		}
+		
 		.wrapper {
-			padding-left: 1em;
-			padding-right: 1em;
+			@include pxToRem(padding-left, 20);
+			@include pxToRem(padding-right, 20);
 			@include box-sizing(border-box);
 		}	
 	}
