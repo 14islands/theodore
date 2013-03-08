@@ -23,33 +23,22 @@
 
 	.wide-picture-wrapper {
 		background-color: #ddd;
-		text-align: center;
-		padding: 0;
-		
-overflow:hidden;
+		overflow:hidden;
 
-/*
-		img {
-			display: block;
-			position: relative;
-			left: 50%;
-			@include pxToRem(width, 568);
-			@include pxToRem(margin-left, -600/2);
-
-			@include if-wider-than-mobile {
-				@include pxToRem(width, 1217);
-				@include pxToRem(margin-left, -1217/2);
-			}
-		}*/
-
->div { position: relative; left: 50%; float: left; }
-img { position: relative; left: -50%; float: left; }
-
+		>div { position: relative; left: 50%; float: left; }
+		img { 
+			position: relative; 
+			left: -50%; 
+			float: left;
+			max-width: 100%;
+		}
 	}
 
 	section {
-
-		@include pxToRem(padding, 50, 0, 50, 0);
+		@include pxToRem(padding, 25, 0, 25, 0);
+		@include if-wider-than-mobile {
+			@include pxToRem(padding, 50, 0, 50, 0);
+		}
 
 		.wrapper {
 			padding-left: 1em;
