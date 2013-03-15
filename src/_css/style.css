@@ -1026,3 +1026,10 @@ nav.page-nav {
           -moz-columns: 2;
           -webkit-column-gap: 2em;
           column-gap: 2em; } }
+    #notes article section .note-image {
+      padding-bottom: 20px; }
+      @media (min-width: 35.5625em) {
+        #notes article section .note-image {
+          padding-bottom: 40px; } }
+      #notes article section .note-image img {
+        width: 100%; }

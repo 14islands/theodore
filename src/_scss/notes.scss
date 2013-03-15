@@ -58,6 +58,13 @@
 				@include column-grid(2);
 			}
 
+			.note-image {
+				@include paddedBottom(20, 40);
+				img {
+					width: 100%;
+				}
+			}
+
 			p {
 				@extend %columsParagraph;
 			}
