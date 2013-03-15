@@ -158,6 +158,26 @@ table {
  */
 /* Breakpoint mixin - wider than most mobiles*/
 /* Breakpoint mixin - wide enough for skeleton grid layout to be active */
+#info p, #notes article section p {
+  padding-bottom: 20px;
+  font-size: 15px; }
+  @media (min-width: 35.5625em) {
+    #info p, #notes article section p {
+      font-size: 16px; } }
+
+#project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper, #project-details .project-item-aside .wrapper, #notes article header .wrapper, #notes article section .wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media (min-width: 35.5625em) {
+    #project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper, #project-details .project-item-aside .wrapper, #notes article header .wrapper, #notes article section .wrapper {
+      padding-left: 30px;
+      padding-right: 30px; } }
+
 body > header #logo > span {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -422,6 +442,17 @@ body > footer {
     #main section:after {
       clear: both; }
 
+nav.page-nav {
+  background: #fff; }
+  nav.page-nav h1 {
+    color: #908f8f;
+    font-size: 14px; }
+  nav.page-nav .wrapper {
+    padding: 10px 0px; }
+    @media (min-width: 35.5625em) {
+      nav.page-nav .wrapper {
+        padding: 21px 0px; } }
+
 /*
 *  Last breakpoint - Bigger than 960 grid - lock it down!
 */
@@ -431,7 +462,7 @@ body > footer {
     margin: 0 auto; }
 
   header .wrapper,
-  nav.projects-nav .wrapper {
+  nav.page-nav .wrapper {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -606,37 +637,27 @@ body > footer {
   	*/ }
   #project-details #main {
     margin: 0; }
-  #project-details h1 {
-    font-size: 36px;
-    letter-spacing: -0.05em; }
-    @media (min-width: 35.5625em) {
-      #project-details h1 {
-        font-size: 60px; } }
-  #project-details h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    letter-spacing: -0.05em; }
-    @media (min-width: 35.5625em) {
-      #project-details h2 {
-        font-size: 31px; } }
-  #project-details p {
-    font-size: 15px;
-    margin-bottom: 15px; }
-    @media (min-width: 35.5625em) {
-      #project-details p {
-        font-size: 16px; } }
-  #project-details img {
-    max-width: 100%; }
-  #project-details nav.projects-nav {
-    background: #fff; }
-    #project-details nav.projects-nav h1 {
-      color: #908f8f;
-      font-size: 14px; }
-    #project-details nav.projects-nav .wrapper {
-      padding: 10px 0px; }
+    #project-details #main h1 {
+      font-size: 36px;
+      letter-spacing: -0.05em; }
       @media (min-width: 35.5625em) {
-        #project-details nav.projects-nav .wrapper {
-          padding: 21px 0px; } }
+        #project-details #main h1 {
+          font-size: 60px; } }
+    #project-details #main h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      letter-spacing: -0.05em; }
+      @media (min-width: 35.5625em) {
+        #project-details #main h2 {
+          font-size: 31px; } }
+    #project-details #main p {
+      font-size: 15px;
+      margin-bottom: 15px; }
+      @media (min-width: 35.5625em) {
+        #project-details #main p {
+          font-size: 16px; } }
+    #project-details #main img {
+      max-width: 100%; }
   #project-details .project-hero {
     background: #efefef;
     border-top: 1px solid #d8d8d8;
@@ -648,18 +669,6 @@ body > footer {
       #project-details section {
         padding-top: 60px;
         padding-bottom: 60px; } }
-  #project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper, #project-details .project-item-aside .wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    -o-box-sizing: border-box;
-    box-sizing: border-box; }
-    @media (min-width: 35.5625em) {
-      #project-details .project-headline, #project-details .project-item-grouped .item, #project-details .project-item-large .wrapper, #project-details .project-item-aside .wrapper {
-        padding-left: 30px;
-        padding-right: 30px; } }
   #project-details .project-headline {
     text-align: center;
     padding-top: 0;
@@ -798,12 +807,6 @@ body > footer {
   @media (min-width: 35.5625em) {
     #info h2 {
       font-size: 31px; } }
-#info p {
-  margin-bottom: 20px;
-  font-size: 15px; }
-  @media (min-width: 35.5625em) {
-    #info p {
-      font-size: 16px; } }
 #info section {
   padding: 25px 0px 25px 0px; }
   @media (min-width: 35.5625em) {
@@ -952,3 +955,74 @@ body > footer {
   background-color: #c38dc1; }
 #info .icon-twitter:hover {
   background-color: #77b9d5; }
+
+#notes nav.page-nav small {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: normal; }
+#notes #main {
+  margin-bottom: 0;
+  border-bottom: 1px solid #e5e5e5; }
+#notes article {
+  border-top: 1px solid #e5e5e5; }
+  #notes article header {
+    background: white;
+    border-bottom: 1px solid #e5e5e5; }
+    #notes article header .wrapper {
+      border: 0;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      @media (min-width: 35.5625em) {
+        #notes article header .wrapper {
+          padding-top: 18px; } }
+      @media (min-width: 35.5625em) {
+        #notes article header .wrapper {
+          padding-bottom: 18px; } }
+  #notes article time {
+    color: #a1a1a1;
+    font-size: 20px; }
+    @media (min-width: 35.5625em) {
+      #notes article time {
+        font-size: 25px; } }
+  #notes article section {
+    background: #f6f6f6 !important; }
+    #notes article section .wrapper {
+      border: 0;
+      padding-top: 30px;
+      padding-bottom: 30px; }
+      @media (min-width: 35.5625em) {
+        #notes article section .wrapper {
+          padding-top: 35px; } }
+      @media (min-width: 35.5625em) {
+        #notes article section .wrapper {
+          padding-bottom: 35px; } }
+    #notes article section h1 {
+      text-align: left;
+      padding-bottom: 20px; }
+      @media (min-width: 35.5625em) {
+        #notes article section h1 {
+          padding-bottom: 25px; } }
+    #notes article section .columns {
+      columns: 1;
+      -webkit-columns: 1;
+      -moz-columns: 1;
+      -webkit-column-gap: 1em;
+      column-gap: 1em; }
+      #notes article section .columns p {
+        -webkit-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid; }
+      @media (min-width: 48em) {
+        #notes article section .columns {
+          columns: 2;
+          -webkit-columns: 2;
+          -moz-columns: 2;
+          -webkit-column-gap: 2em;
+          column-gap: 2em; } }
+      @media (min-width: 60em) {
+        #notes article section .columns {
+          columns: 2;
+          -webkit-columns: 2;
+          -moz-columns: 2;
+          -webkit-column-gap: 2em;
+          column-gap: 2em; } }

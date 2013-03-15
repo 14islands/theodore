@@ -9,49 +9,34 @@
 
 	#main {
 		margin: 0;
-	}
 
-	h1 {
-		@include pxToRem(font-size, 36);
-		letter-spacing: -0.05em;
-		@include if-wider-than-mobile {
-			@include pxToRem(font-size, 60);
-		}
-	}
-	h2 {
-		@include pxToRem(font-size, 24);
-		@include pxToRem(margin-bottom, 15);
-		letter-spacing: -0.05em;
-		@include if-wider-than-mobile {
-			@include pxToRem(font-size, 31);
-		}
-	}
-	p {
-		@include pxToRem(font-size, 15);
-		@include pxToRem(margin-bottom, 15);
-		@include if-wider-than-mobile {
-			@include pxToRem(font-size, 16);
-		}
-	}
-
-	img {
-		max-width: 100%;
-	}
-
-	nav.projects-nav {
-		background: #fff;
 		h1 {
-			color: #908f8f;
-			@include pxToRem(font-size, 14);
-		}
-		.wrapper {
-			@include pxToRem(padding, 10, 0);
+			@include pxToRem(font-size, 36);
+			letter-spacing: -0.05em;
 			@include if-wider-than-mobile {
-				@include pxToRem(padding, 21, 0);
+				@include pxToRem(font-size, 60);
 			}
 		}
+		h2 {
+			@include pxToRem(font-size, 24);
+			@include pxToRem(margin-bottom, 15);
+			letter-spacing: -0.05em;
+			@include if-wider-than-mobile {
+				@include pxToRem(font-size, 31);
+			}
+		}
+		p {
+			@include pxToRem(font-size, 15);
+			@include pxToRem(margin-bottom, 15);
+			@include if-wider-than-mobile {
+				@include pxToRem(font-size, 16);
+			}
+		}
+		img {
+			max-width: 100%;
+		}
 	}
-
+	
 	.project-hero {
 		background: #efefef;
 		border-top: 1px solid #d8d8d8;
@@ -66,17 +51,6 @@
 		@include if-wider-than-mobile {
 			@include pxToRem(padding-top, 60);
 			@include pxToRem(padding-bottom, 60);
-		}
-	}
-
-	%paddedMargins {
-		@include pxToRem(padding-left, 20);
-		@include pxToRem(padding-right, 20);
-		@include box-sizing(border-box);	
-
-		@include if-wider-than-mobile {
-			@include pxToRem(padding-left, 30);
-			@include pxToRem(padding-right, 30);
 		}
 	}
 

@@ -34,14 +34,8 @@
 	}
 
 	p {
-		@include pxToRem(margin-bottom, 20);
-		@include pxToRem(font-size, 15);
-		@include if-wider-than-mobile {
-			@include pxToRem(font-size, 16);
-		}
+		@extend %columsParagraph;
 	}
-
-
 
 	section {
 		@include pxToRem(padding, 25, 0, 25, 0);

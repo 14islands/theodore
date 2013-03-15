@@ -74,6 +74,41 @@
 }
 
 
+@mixin paddedTop($mobilePadding, $biggerPadding) {
+	@include pxToRem(padding-top, $mobilePadding);
+	@include if-wider-than-mobile {
+		@include pxToRem(padding-top, $biggerPadding);
+	}
+}
+
+@mixin paddedBottom($mobilePadding, $biggerPadding) {
+	@include pxToRem(padding-bottom, $mobilePadding);
+	@include if-wider-than-mobile {
+		@include pxToRem(padding-bottom, $biggerPadding);
+	}
+}
+
+%columsParagraph {
+	@include pxToRem(padding-bottom, 20);
+	@include pxToRem(font-size, 15);
+	@include if-wider-than-mobile {
+		@include pxToRem(font-size, 16);
+	}
+}
+
+%paddedMargins {
+	@include pxToRem(padding-left, 20);
+	@include pxToRem(padding-right, 20);
+	@include box-sizing(border-box);	
+
+	@include if-wider-than-mobile {
+		@include pxToRem(padding-left, 30);
+		@include pxToRem(padding-right, 30);
+	}
+}
+
+
+
 // accessible way of hiding text for image replacement
 %ir-hide-text {
 	position: absolute !important;
@@ -210,16 +245,15 @@ body > header {
 
 		@include if-wider-than-mobile {
 			@include pxToRem(height, $bigHeaderHeight);
-		  @include pxToRem(width, $bigLogoWidth);
-		  @include pxToRem(background-position, 20, 8);
-		  @include sprite-background-size;
+		  	@include pxToRem(width, $bigLogoWidth);
+		  	@include pxToRem(background-position, 20, 8);
+		  	@include sprite-background-size;
 		}
 
 		> span {
 			@extend %ir-hide-text;
 	  }
 	}
-
 
 	nav {
 		text-transform: uppercase;
@@ -230,7 +264,7 @@ body > header {
 
 		@include if-wider-than-mobile {
 			@include pxToRem(line-height, $bigHeaderHeight);
-		  @include pxToRem(margin-left, $bigLogoWidth);
+		 	@include pxToRem(margin-left, $bigLogoWidth);
 		}
 
 		// switch to smaller font under 280px wide
@@ -316,6 +350,20 @@ body > footer {
 	overflow-x: hidden;
 }
 
+nav.page-nav {
+	background: #fff;
+	h1 {
+		color: #908f8f;
+		@include pxToRem(font-size, 14);
+	}
+	.wrapper {
+		@include pxToRem(padding, 10, 0);
+		@include if-wider-than-mobile {
+			@include pxToRem(padding, 21, 0);
+		}
+	}
+}
+
 
 /*
 *  Last breakpoint - Bigger than 960 grid - lock it down!
@@ -326,7 +374,7 @@ body > footer {
 		margin: 0 auto;
 	}
 	header .wrapper,
-	nav.projects-nav .wrapper {
+	nav.page-nav .wrapper {
 		@include box-sizing(border-box);
 		border-left: 1px dotted #c9c9c9;
 		border-right: 1px dotted #c9c9c9;
